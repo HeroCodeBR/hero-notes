@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import { Header } from '../../components/Header';
 import { List } from '../../components/List';
 import styles from './Home.module.css';
-import { v4 as uuid } from 'uuid';
 
 export interface ITodo {
   id: string;
@@ -44,7 +44,6 @@ export function Home() {
 
   const deleteTodo = (id: string) => {
     const filterTodos = todos.filter((todo) => todo.id !== id);
-
     setTodos(filterTodos);
   };
 
